@@ -1,14 +1,14 @@
 Description
 ===========
 
-A [Dashing](https://github.com/Shopify/dashing) widget to display readings from your [NetAtmo](https://www.netatmo.com) Personal Weather Station (PWS).
+A [Smashing](https://github.com/Smashing/smashing) widget to display readings from your [Netatmo](https://www.netatmo.com) Personal Weather Station (PWS).
 
 Dependencies
 ============
 
-You need an account and Weather Station from [NetAtmo](https://www.netatmo.com).
+You need an account and Weather Station from [Netatmo](https://www.netatmo.com).
 
-You also need to register an own app at [NetAtmo Developer](https://dev.netatmo.com) to get access to all readings from your PWS.
+You also need to register an own app at [Netatmo Developer](https://dev.netatmo.com) to get access to all readings from your PWS.
 
 Add to dashing's gemfile:
 ```
