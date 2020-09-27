@@ -4,4 +4,5 @@ username: your_username
 password: your_password
 station_name: name_of_your_station
 module_name: name_of_your_outdoor_module
+module2_name: name_of_additional_indoor_module
 interval: 60s
