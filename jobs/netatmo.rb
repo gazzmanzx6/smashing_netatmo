@@ -78,7 +78,7 @@ SCHEDULER.every interval, :first_in => 0 do
                 send_event('netatmo_indoor2',  current: indoor_data2,  previous: previous_indoor_data2)
                 send_event('netatmo_outdoor', current: outdoor_data, previous: previous_outdoor_data)
                 
-				send_event('netatmo_outdoor_temperature', current: outdoor_data['Temperature'], previous: previous_outdoor_data['Temperature'])
+		send_event('netatmo_outdoor_temperature', current: outdoor_data['Temperature'], previous: previous_outdoor_data['Temperature'])
                 send_event('netatmo_outdoor_humidity', current: outdoor_data['Humidity'], previous: previous_outdoor_data['Humidity'])
 
                 send_event('netatmo_indoor_co2',      current: indoor_data['CO2'],      previous: previous_indoor_data['CO2'])
