@@ -8,7 +8,8 @@ Dependencies
 
 You need an account and Weather Station from [Netatmo](https://www.netatmo.com).
 
-You also need to register an own app at [Netatmo Developer](https://dev.netatmo.com) to get access to all readings from your PWS.
+You also need to register your own app at [Netatmo Developer](https://dev.netatmo.com) to get access to all readings from your PWS.
+Once the app is created you need to generate a refresh_token as username and password are no longer accepted by the Netatmo API.
 
 Add to dashing's gemfile:
 ```
