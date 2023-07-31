@@ -31,11 +31,10 @@ module_name  = config['module_name']  ? config['module_name']  : config['outdoor
 # --
 
 parameters = [
-    Curl::PostField.content('grant_type', 'password'),
+    Curl::PostField.content('grant_type', 'refresh_token'),
+    Curl::PostField.content('refresh_token', config['refresh_token']),
     Curl::PostField.content('client_id', config['app_id']),
     Curl::PostField.content('client_secret', config['app_secret']),
-    Curl::PostField.content('username', config['username']),
-    Curl::PostField.content('password', config['password']),
     Curl::PostField.content('scope', 'read_station')
 ]
 
