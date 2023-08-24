@@ -93,7 +93,7 @@ SCHEDULER.every interval, :first_in => 0 do
 
                 send_event('netatmo',
                   indoor:  indoor_data,
-                  indoor2:  indoor_data2,
+                  indoor2: indoor_data2,
                   outdoor: outdoor_data,
 
                   previous_indoor: previous_indoor_data,
