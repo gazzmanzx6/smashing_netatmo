@@ -15,6 +15,9 @@ Add to dashing's gemfile:
 ```
 gem 'curb'
 gem 'json'
+gem 'sinatra'
+gem 'thin'
+gem 'net-http'
 ```
 and run `bundle install`.
 
@@ -22,6 +25,15 @@ Usage
 ============
 
 Update your settings in config/netatmo.yml
+
+Copy the app.rb file to the smashing-dashboards/dashboard folder and run it using:
+```
+ruby app.rb -o 0.0.0.0
+```
+Then in the browser navigate to http://localhost:4567
+Click on the link to authenticate via the Netatmo site.
+
+This will save the access & refresh tokens in the tokens.json file.
 
 Add the widget HTML to your dashboard
 ```
