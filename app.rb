@@ -4,8 +4,8 @@ require 'json'
 require 'uri'
 
 class MyApp < Sinatra::Base
-CLIENT_ID = '5fb50ee9dae8db277c0641e3'
-CLIENT_SECRET = '45SbTMxRQCssKvDJNASwDE3FClK0keE'
+CLIENT_ID = 'CLIENT_ID'
+CLIENT_SECRET = 'CLIENT_SECRET'
 REDIRECT_URI = 'http://localhost:4567/callback'
 
 get '/' do
