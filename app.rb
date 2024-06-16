@@ -2,10 +2,12 @@ require 'sinatra'
 require 'net/http'
 require 'json'
 require 'uri'
+require 'yaml'
 
 class MyApp < Sinatra::Base
-CLIENT_ID = 'CLIENT_ID'
-CLIENT_SECRET = 'CLIENT_SECRET'
+config = YAML.load_file("config/netatmo.yml")
+ID = config['client_id']
+SECRET = config['client_secret']
 REDIRECT_URI = 'http://localhost:4567/callback'
 
 get '/' do
@@ -13,7 +15,7 @@ get '/' do
 end
 
 get '/authorize' do
-  redirect to("https://api.netatmo.com/oauth2/authorize?client_id=#{CLIENT_ID}&redirect_uri=#{REDIRECT_URI}&scope=read_station&response_type=code")
+  redirect to("https://api.netatmo.com/oauth2/authorize?client_id=#{ID}&redirect_uri=#{REDIRECT_URI}&scope=read_station&response_type=code")
 end
 
 get '/callback' do
@@ -22,8 +24,8 @@ get '/callback' do
   uri = URI('https://api.netatmo.com/oauth2/token')
   response = Net::HTTP.post_form(uri, {
     'grant_type' => 'authorization_code',
-    'client_id' => CLIENT_ID,
-    'client_secret' => CLIENT_SECRET,
+    'client_id' => ID,
+    'client_secret' => SECRET,
     'code' => authorization_code,
     'redirect_uri' => REDIRECT_URI
   })
