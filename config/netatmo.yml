@@ -1,3 +1,5 @@
+client_id: 'client id from Netatmo'
+client_secret: 'client secret from Netatmo'
 station_name: name_of_your_station
 module_name: name_of_your_outdoor_module
 module2_name: name_of_additional_indoor_module
