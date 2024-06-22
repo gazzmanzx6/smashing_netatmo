@@ -18,6 +18,7 @@ gem 'json'
 gem 'sinatra'
 gem 'thin'
 gem 'net-http'
+gem 'oauth2'
 ```
 and run `bundle install`.
 
