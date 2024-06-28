@@ -5,6 +5,7 @@ require 'uri'
 require 'yaml'
 
 class MyApp < Sinatra::Base
+
 config = YAML.load_file("config/netatmo.yml")
 ID = config['client_id']
 SECRET = config['client_secret']
@@ -33,10 +34,12 @@ get '/callback' do
   token_data = JSON.parse(response.body)
   access_token = token_data['access_token']
   refresh_token = token_data['refresh_token']
+  expires_in = token_data['expires_in']
+  expires_at = Time.now.to_i + expires_in
 
   # Store tokens in a file or a database
   File.open('tokens.json', 'w') do |f|
-    f.write(JSON.pretty_generate({ access_token: access_token, refresh_token: refresh_token }))
+    f.write(JSON.pretty_generate({ access_token: access_token, refresh_token: refresh_token, expires_at: expires_at }))
   end
 
   redirect to('/dashboard')
